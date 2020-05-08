@@ -1,4 +1,4 @@
-package vn.amabuy.functions.searching;
+package vn.amabuy.features.search;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Issue;
