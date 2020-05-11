@@ -18,7 +18,8 @@ public class WhenOpeningTheWeb {
     HomeSteps Scarletgif;
 
     @Test
-    public void launch_web_application(){
-        Scarletgif.vitsit_application();
+    public void create_account(){
+        Scarletgif.create_account("Minh Minh", "minh@gmail.com","12345689","12345689");
     }
+
 }
