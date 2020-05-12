@@ -4,14 +4,13 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+
 public class LoginPage extends PageObject {
 
-    @FindBy(xpath = "//*[@id=\"createAccountSubmit\"]")
-    WebElementFacade registerLink;
+    WebElementFacade createAccountSubmit ;
+    public void clickOnRegisterLink(){
 
-    public void clickonRegisterLink(){
-        registerLink.click();
+        createAccountSubmit.click();
     }
-
 
 }

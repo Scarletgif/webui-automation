@@ -6,10 +6,10 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class HomePage extends PageObject {
 
-    @FindBy(xpath = "//*[@id=\"nav-link-accountList\"]")
+    @FindBy(id = "nav-link-accountList")
     WebElementFacade loginLink ;
 
-    public void clickonLoginLink(){
+    public void clickOnLoginLink(){
         loginLink.click();
     }
 }

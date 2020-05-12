@@ -19,7 +19,7 @@ public class WhenOpeningTheWeb {
 
     @Test
     public void create_account(){
-        scarletGif.create_account("Minh Minh", "minh@gmail.com","12345689","12345689");
+        scarletGif.visit_application();
     }
 
 }
