@@ -15,11 +15,24 @@ public class WhenOpeningTheWeb {
     WebDriver driver;
 
     @Steps
-    HomeSteps Scarletgif;
+    HomeSteps scarletGif;
 
     @Test
-    public void create_account(){
-        Scarletgif.create_account("Minh Minh", "minh@gmail.com","12345689","12345689");
+    public void visit_app(){
+        scarletGif.visit_application();
     }
+    @Test
+    public void redirect_register(){
+        scarletGif.redirect_register_onloginpage();
+    }
+
+    /*
+    public void create_account(){
+     //   Scarletgif.create_account("Minh Minh", "minh@gmail.com","12345689","12345689");
+        scarletGif.visit_application();
+        scarletGif.redirect_register_onloginpage();
+        scarletGif.enter_account_info("Minh Minh", "minh@gmail.com","12345689","12345689");
+    }
+    */
 
 }
