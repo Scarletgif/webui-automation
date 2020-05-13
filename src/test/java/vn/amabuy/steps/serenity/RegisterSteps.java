@@ -43,7 +43,7 @@ public class RegisterSteps {
     }
     @Step
     public void should_see_warning_error_message(String expectedErrMsg) {
-        String actualErMsg =onRegisterPage.getWarningErrMegs();
+        String actualErMsg =onRegisterPage.getWarningErrMsg();
         //assertEquals(expectedErrMsg,actualErMsg);
         assertThat(expectedErrMsg, equalTo(actualErMsg));
     }
