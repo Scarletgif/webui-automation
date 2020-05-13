@@ -3,6 +3,9 @@ package vn.amabuy.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.RegisterPage;
 import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 
 public class RegisterSteps {
     RegisterPage onRegisterPage;
@@ -39,7 +42,9 @@ public class RegisterSteps {
         onRegisterPage.enterTextIntoYourName(yourName);
     }
     @Step
-    public void should_see_warning_error_message(String expectederrMsg) {
-        assertEquals(expectederrMsg,onRegisterPage.getWarningErrMesg());
+    public void should_see_warning_error_message(String expectedErrMsg) {
+        String actualErMsg =onRegisterPage.getWarningErrMegs();
+        //assertEquals(expectedErrMsg,actualErMsg);
+        assertThat(expectedErrMsg, equalTo(actualErMsg));
     }
 }

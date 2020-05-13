@@ -30,7 +30,7 @@ public class RegisterPage extends PageObject {
         $(checkPasswordField).type(password);
     }
 
-    public String getWarningErrMesg() {
+    public String getWarningErrMegs() {
         return $(passwordMismatchField).getText();
     }
 
