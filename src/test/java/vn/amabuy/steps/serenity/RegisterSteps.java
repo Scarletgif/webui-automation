@@ -1,9 +1,10 @@
 package vn.amabuy.steps.serenity;
 
+import com.google.common.base.Optional;
+import com.sun.xml.bind.v2.runtime.reflect.opt.OptimizedAccessorFactory;
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.RegisterPage;
 import static org.junit.Assert.assertEquals;
-import static org.assertj.core.api.Assertions.*;
 
 
 public class RegisterSteps {
@@ -42,9 +43,11 @@ public class RegisterSteps {
     }
     @Step
     public void should_see_warning_error_message(String expectedErrMsg) {
-        String actualErMsg =onRegisterPage.getWarningErrMsg();
+        //String actualErMsg =onRegisterPage.getWarningErrMsg();
+        //Optional<String> actualErMsg=Optional.of(onRegisterPage.getWarningErrMsg());
         //assertEquals(expectedErrMsg,actualErMsg);
         //assertThat(expectedErrMsg, equalTo(actualErMsg));
-        assertThat(actualErMsg).isEqualTo(expectedErrMsg);
+        //assertThat(actualErMsg).isEqualTo(expectedErrMsg);
+        //assertThat(actualErMsg).hasValue(expectedErrMsg);
     }
 }
