@@ -3,8 +3,7 @@ package vn.amabuy.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.RegisterPage;
 import static org.junit.Assert.assertEquals;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.assertj.core.api.Assertions.*;
 
 
 public class RegisterSteps {
@@ -45,6 +44,7 @@ public class RegisterSteps {
     public void should_see_warning_error_message(String expectedErrMsg) {
         String actualErMsg =onRegisterPage.getWarningErrMsg();
         //assertEquals(expectedErrMsg,actualErMsg);
-        assertThat(expectedErrMsg, equalTo(actualErMsg));
+        //assertThat(expectedErrMsg, equalTo(actualErMsg));
+        assertThat(actualErMsg).isEqualTo(expectedErrMsg);
     }
 }
