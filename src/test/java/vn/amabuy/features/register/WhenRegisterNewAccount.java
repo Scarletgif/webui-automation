@@ -29,7 +29,7 @@ public class WhenRegisterNewAccount {
         homeSteps.click_on_login_link();
         loginSteps.click_on_register_link();
         registerSteps.register_new_account("Minh Minh","minh@gmail.com","123456789","123456");
-        //registerSteps.should_see_warning_error_message(errMsg);
+        registerSteps.should_see_warning_error_message(errMsg);
         //Optional<Integer> anOptional = Optional.of(1);
 
         //assertThat(anOptional).hasValue(1);
