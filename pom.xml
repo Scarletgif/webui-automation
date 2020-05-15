@@ -37,8 +37,6 @@
     </pluginRepositories>
 
     <dependencies>
-
-
         <dependency>
             <groupId>com.google.truth</groupId>
             <artifactId>truth</artifactId>
@@ -57,7 +55,6 @@
             <artifactId>truth-java8-extension</artifactId>
             <version>1.0.1</version>
         </dependency>
-
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
