@@ -14,6 +14,7 @@ public class RegisterPage extends PageObject {
     @FindBy(id = "auth-password-mismatch-alert")    WebElementFacade passwordMismatchField ;
     @FindBy(id = "continue")    WebElementFacade continueField ;
 
+
     public void enterTextIntoYourName(String yourName){
         $(yourNameField).type(yourName);
     }
@@ -44,4 +45,6 @@ public class RegisterPage extends PageObject {
             return String.format(TARGET,label);
         }
     }
+
+
 }

@@ -16,5 +16,13 @@ public class HomeSteps {
     public void click_on_login_link(){
         onHomePage.clickOnLoginLink();
     }
-
+    @Step
+    public void select_state(String... states) {
+        onHomePage.selectMultiState(states);
+    }
+    @Step
+    public void select_states(String... states){
+        visit_application();
+        select_state(states);
+    }
 }

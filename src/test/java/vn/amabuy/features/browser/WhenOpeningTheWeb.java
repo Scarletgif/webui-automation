@@ -19,7 +19,9 @@ public class WhenOpeningTheWeb {
 
     @Test
     public void create_account(){
-        scarletGif.visit_application();
+        //scarletGif.visit_application();
+        scarletGif.select_states("Alaska");
     }
+
 
 }

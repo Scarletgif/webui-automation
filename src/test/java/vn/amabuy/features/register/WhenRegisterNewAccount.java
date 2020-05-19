@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import vn.amabuy.features.models.Account;
 import vn.amabuy.steps.serenity.HomeSteps;
 import vn.amabuy.steps.serenity.LoginSteps;
 import vn.amabuy.steps.serenity.RegisterSteps;
@@ -21,13 +22,15 @@ public class WhenRegisterNewAccount {
     @Steps
     RegisterSteps registerSteps;
 
+    Account accountInfo = new Account("Minh Minh","minh@gmail.com","123456789","123456");
+    String errMsg ="Passwords must match";
     @Test
-    public void register_new_account(){
-        String errMsg ="Passwords must match";
+    public void register_new_account_with_incorrect_password(){
+
         homeSteps.visit_application();
         homeSteps.click_on_login_link();
         loginSteps.click_on_register_link();
-        registerSteps.register_new_account("Minh Minh","minh@gmail.com","123456789","123456");
+        registerSteps.register_new_account(accountInfo);
         registerSteps.should_see_warning_error_message(errMsg);
     }
 
