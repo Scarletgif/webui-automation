@@ -7,7 +7,7 @@ public class Account {
     private String email;
     private String password;
     private String rePassword;
-    DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyymmdd_HHss");
+    DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyymmddHHmmss");
     LocalDateTime now=LocalDateTime.now();
 
     public Account(String fullname, String email, String password, String rePassword) {
