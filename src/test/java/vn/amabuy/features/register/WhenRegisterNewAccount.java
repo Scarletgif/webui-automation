@@ -12,7 +12,7 @@ import vn.amabuy.features.models.Account;
 import vn.amabuy.steps.serenity.HomeSteps;
 import vn.amabuy.steps.serenity.LoginSteps;
 import vn.amabuy.steps.serenity.RegisterSteps;
-
+//test git
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv,src/test/resources/registernewaccount_testdata2.csv")
@@ -45,8 +45,6 @@ public class WhenRegisterNewAccount {
         loginSteps.click_on_register_link();
         registerSteps.register_new_account(accountInfo);
         registerSteps.should_see_warning_error_message(errMsg);
-
-
     }
 
 
