@@ -3,6 +3,8 @@ package vn.amabuy.features.register;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTag;
+import net.thucydides.core.annotations.WithTags;
 import net.thucydides.junit.annotations.Qualifier;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
@@ -16,6 +18,12 @@ import vn.amabuy.steps.serenity.RegisterSteps;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv,src/test/resources/registernewaccount_testdata2.csv")
+@WithTags(
+        {
+                @WithTag("parallel"),
+                @WithTag("register")
+        }
+)
 public class WhenRegisterNewAccount {
     @Managed
     WebDriver driver;
@@ -48,6 +56,5 @@ public class WhenRegisterNewAccount {
 
 
     }
-
 
 }
