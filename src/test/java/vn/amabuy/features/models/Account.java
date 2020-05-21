@@ -3,6 +3,36 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 public class Account {
+    public static AccountBuilder named(String name){
+        return new AccountBuilder(name);
+    }
+    public static class AccountBuilder{
+        private String fullname;
+        private String email;
+        private String password;
+        private String rePassword;
+        public AccountBuilder(String name){
+            this.fullname=name;
+
+        }
+        public AccountBuilder withEmail(String email){
+            this.email=email;
+            return this;
+        }
+        public AccountBuilder withPassword(String password){
+            this.password=password;
+            return this;
+        }
+        public AccountBuilder withRePassword(String rePassword){
+            this.rePassword=rePassword;
+            return this;
+        }
+        public Account build(){
+           return new Account(fullname,email,password,rePassword);
+        }
+
+    }
+
     private String fullname;
     private String email;
     private String password;

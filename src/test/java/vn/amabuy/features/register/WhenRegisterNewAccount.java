@@ -2,6 +2,7 @@
 package vn.amabuy.features.register;
 
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.WithTag;
@@ -17,8 +18,8 @@ import vn.amabuy.steps.serenity.LoginSteps;
 import vn.amabuy.steps.serenity.RegisterSteps;
 
 
-@RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv")
+@RunWith(SerenityRunner.class)
+//@UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv")
 @WithTags(
         {
                 @WithTag("parallel"),
@@ -41,14 +42,18 @@ public class WhenRegisterNewAccount {
     private String password;
     private String rePassword;
 
-    //Account accountInfo = new Account("Minh Minh","minh@gmail.com","123456789","123456");
-    Account accountInfo;
+
+    Account accountInfo = Account.named("Minh Minh")
+                                    .withEmail("minh@gmail.com")
+                                    .withPassword("123456789")
+                                    .withRePassword("123456")
+                                    .build();
+    //Account accountInfo;
 
     String errMsg ="Passwords must match";
     @Test
     public void register_new_account_with_incorrect_password(){
 
-        accountInfo=new Account (fullName,email,password,rePassword);
         homeSteps.visit_application();
         homeSteps.click_on_login_link();
         loginSteps.click_on_register_link();
