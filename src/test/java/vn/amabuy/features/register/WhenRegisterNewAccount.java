@@ -18,7 +18,7 @@ import vn.amabuy.steps.serenity.RegisterSteps;
 
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv,src/test/resources/registernewaccount_testdata2.csv")
+@UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv")
 @WithTags(
         {
                 @WithTag("parallel"),
