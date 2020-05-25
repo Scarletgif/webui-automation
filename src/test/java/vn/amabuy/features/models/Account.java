@@ -7,12 +7,13 @@ public class Account {
         return new AccountBuilder(name);
     }
     public static class AccountBuilder{
-        private String fullname;
+        private String fullName;
         private String email;
         private String password;
         private String rePassword;
         public AccountBuilder(String name){
-            this.fullname=name;
+            this.fullName =name;
+
 
         }
         public AccountBuilder withEmail(String email){
@@ -28,31 +29,31 @@ public class Account {
             return this;
         }
         public Account build(){
-           return new Account(fullname,email,password,rePassword);
+           return new Account(fullName,email,password,rePassword);
         }
 
     }
 
-    private String fullname;
+    private String fullName;
     private String email;
     private String password;
     private String rePassword;
     DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyymmddHHmmss");
     LocalDateTime now=LocalDateTime.now();
 
-    public Account(String fullname, String email, String password, String rePassword) {
-        this.fullname = fullname;
+    public Account(String fullName, String email, String password, String rePassword) {
+        this.fullName = fullName;
         this.email = String.format("%s_%s",dtf.format(now),email);
         this.password = password;
         this.rePassword = rePassword;
     }
 
     public String getFullname() {
-        return fullname;
+        return fullName;
     }
 
     public void setFullname(String fullname) {
-        this.fullname = fullname;
+        this.fullName = fullname;
     }
 
     public String getEmail() {
