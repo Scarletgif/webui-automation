@@ -1,5 +1,6 @@
 package vn.amabuy.steps.serenity;
 
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.RegisterPage;
 import static org.junit.Assert.assertEquals;
@@ -12,6 +13,8 @@ public class RegisterSteps {
     RegisterPage onRegisterPage;
     @Step
     public void register_new_account(Account accountInfo){
+        Serenity.setSessionVariable("Fullname").to(accountInfo.getFullname());
+        Serenity.setSessionVariable("Email").to(accountInfo.getEmail());
         enter_your_name(accountInfo.getFullname());
         enter_email(accountInfo.getEmail());
         enter_password(accountInfo.getPassword());

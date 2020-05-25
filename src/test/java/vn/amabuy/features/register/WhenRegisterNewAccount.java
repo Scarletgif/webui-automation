@@ -1,6 +1,7 @@
 
 package vn.amabuy.features.register;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -17,13 +18,15 @@ import vn.amabuy.steps.serenity.HomeSteps;
 import vn.amabuy.steps.serenity.LoginSteps;
 import vn.amabuy.steps.serenity.RegisterSteps;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 @RunWith(SerenityRunner.class)
 //@UseTestDataFrom("src/test/resources/registernewaccount_testdata1.csv")
 @WithTags(
         {
                 @WithTag("parallel"),
-                @WithTag("register")
+                @WithTag("sessionvariable")
         }
 )
 public class WhenRegisterNewAccount {
@@ -63,6 +66,14 @@ public class WhenRegisterNewAccount {
         registerSteps.should_see_warning_error_message(errMsg);
 
 
+    }
+    @Test
+    public void verify_fullname_session_variable(){
+        assertThat("Minh Minh").isEqualTo(Serenity.sessionVariableCalled("Phone"));
+    }
+    @Test
+    public void verify_email_session_variable(){
+        assertThat("minh@gmail.com").isEqualTo(Serenity.sessionVariableCalled("Email"));
     }
 
 }

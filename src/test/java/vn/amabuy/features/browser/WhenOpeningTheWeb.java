@@ -1,5 +1,6 @@
 package vn.amabuy.features.browser;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -10,11 +11,13 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import vn.amabuy.steps.serenity.HomeSteps;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SerenityRunner.class)
 @WithTags(
         {
           @WithTag("parallel"),
-          @WithTag("Opening")
+          @WithTag("sessionvariable")
         }
 )
 
@@ -30,6 +33,10 @@ public class WhenOpeningTheWeb {
     public void create_account(){
         scarletGif.visit_application();
         //scarletGif.select_states("Alaska");
+    }
+    @Test
+    public void verify_email_session_variable(){
+        assertThat("minh@gmail.com").isEqualTo(Serenity.sessionVariableCalled("Email"));
     }
 
 
