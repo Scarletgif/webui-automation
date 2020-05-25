@@ -46,6 +46,7 @@ public class WhenRegisterNewAccount {
    Account accountInfo = Account.named("Minh Minh")
            .withEmail("minh@gmail.com")
            .withPassword("12345689")
+           .withRePassword("123456")
            .build();
 
     //Account accountInfo;
