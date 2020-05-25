@@ -78,4 +78,5 @@ public class Account {
     public void setRePassword(String rePassword) {
         this.rePassword = rePassword;
     }
+
 }

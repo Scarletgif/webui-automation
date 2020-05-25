@@ -43,17 +43,18 @@ public class WhenRegisterNewAccount {
     private String rePassword;
 
 
-    Account accountInfo = Account.named("Minh Minh")
-                                    .withEmail("minh@gmail.com")
-                                    .withPassword("123456789")
-                                    .withRePassword("123456")
-                                    .build();
+   Account accountInfo = Account.named("Minh Minh")
+           .withEmail("minh@gmail.com")
+           .withPassword("12345689")
+           .build();
+
     //Account accountInfo;
+    //Account info=Account.
 
     String errMsg ="Passwords must match";
     @Test
     public void register_new_account_with_incorrect_password(){
-
+        
         homeSteps.visit_application();
         homeSteps.click_on_login_link();
         loginSteps.click_on_register_link();
