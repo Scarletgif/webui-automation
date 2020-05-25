@@ -13,8 +13,6 @@ public class Account {
         private String rePassword;
         public AccountBuilder(String name){
             this.fullName =name;
-
-
         }
         public AccountBuilder withEmail(String email){
             this.email=email;
@@ -41,12 +39,14 @@ public class Account {
     DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyymmddHHmmss");
     LocalDateTime now=LocalDateTime.now();
 
+
     public Account(String fullName, String email, String password, String rePassword) {
         this.fullName = fullName;
         this.email = String.format("%s_%s",dtf.format(now),email);
         this.password = password;
         this.rePassword = rePassword;
     }
+
 
     public String getFullname() {
         return fullName;

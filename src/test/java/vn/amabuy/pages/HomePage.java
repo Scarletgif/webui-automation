@@ -1,7 +1,6 @@
 package vn.amabuy.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Managed;
 import org.fluentlenium.core.Fluent;
@@ -11,11 +10,12 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import vn.amabuy.MyPageObject;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class HomePage extends PageObject {
+public class HomePage extends MyPageObject {
 
     @FindBy(id = "nav-link-accountList")
     WebElementFacade loginLink ;

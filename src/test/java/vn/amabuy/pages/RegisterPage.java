@@ -1,11 +1,11 @@
 package vn.amabuy.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
+import vn.amabuy.MyPageObject;
 
-public class RegisterPage extends PageObject {
+public class RegisterPage extends MyPageObject {
 
     @FindBy(id="ap_customer_name")    WebElementFacade yourNameField;
     @FindBy (id="ap_email")    WebElementFacade emailField;
