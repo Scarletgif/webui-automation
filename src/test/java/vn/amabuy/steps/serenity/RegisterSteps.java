@@ -3,18 +3,19 @@ package vn.amabuy.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.RegisterPage;
 import static org.junit.Assert.assertEquals;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.assertj.core.api.Assertions.*;
+import org.openqa.selenium.support.ui.FluentWait;
+import vn.amabuy.features.models.Account;
 
 
 public class RegisterSteps {
     RegisterPage onRegisterPage;
     @Step
-    public void register_new_account(String yourName, String email, String password, String checkPassword){
-        enter_your_name(yourName);
-        enter_email(email);
-        enter_password(password);
-        enter_confirm_password(checkPassword);
+    public void register_new_account(Account accountInfo){
+        enter_your_name(accountInfo.getFullname());
+        enter_email(accountInfo.getEmail());
+        enter_password(accountInfo.getPassword());
+        enter_confirm_password(accountInfo.getRePassword());
         click_on_register_button();
     }
 
@@ -45,6 +46,8 @@ public class RegisterSteps {
     public void should_see_warning_error_message(String expectedErrMsg) {
         String actualErMsg =onRegisterPage.getWarningErrMsg();
         //assertEquals(expectedErrMsg,actualErMsg);
-        assertThat(expectedErrMsg, equalTo(actualErMsg));
+        //assertThat(expectedErrMsg, equalTo(actualErMsg));
+        assertThat(actualErMsg).isEqualTo(expectedErrMsg);
+        
     }
 }
