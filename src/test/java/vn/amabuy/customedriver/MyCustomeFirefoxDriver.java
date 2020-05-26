@@ -20,12 +20,15 @@ public class MyCustomeFirefoxDriver implements DriverSource {
 
             DesiredCapabilities capabilities = DesiredCapabilities.firefox();
             capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+            //capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "accept");
 
             FirefoxOptions options = new FirefoxOptions(capabilities);
+            /*
             options.addArguments("--headless");
             options.addArguments("--width=800");
             options.addArguments("--height=800");
             options.addArguments("-private");
+            */
             return new FirefoxDriver(options);
 
     }
