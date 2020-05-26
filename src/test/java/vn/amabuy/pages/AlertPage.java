@@ -1,6 +1,7 @@
 package vn.amabuy.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.apache.commons.collections.functors.NonePredicate;
 import org.apache.commons.collections.functors.TruePredicate;
@@ -11,16 +12,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import vn.amabuy.MyPageObject;
 
-public class AlertPage extends MyPageObject {
-/*
-    @FindBy(xpath = "/html/body/button")
-    WebElementFacade Tryit ;
+public class AlertPage extends PageObject {
 
- */
+    @FindBy(xpath = "//*[@id=\"main\"]/div[9]/a")
+    WebElementFacade tryItYourself ;
+
+
     public void answerPrompt(String answer) {
-        getDriver().switchTo().frame("iframeResult");
-         $("//button[.='Try it']").click();
-       // getAlert().sendKeys(answer);
+        tryItYourself.click();
+       //getDriver().switchTo().frame("iframeResult");
+        $("//button[.='Try it']").click();
+         waitABit(10000);
+       //   getAlert().sendKeys(answer);
     }
 
     public void acceptAlertPrompt() {
