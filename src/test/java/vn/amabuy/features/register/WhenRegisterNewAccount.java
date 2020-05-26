@@ -69,10 +69,11 @@ public class WhenRegisterNewAccount {
     }
     @Test
     public void verify_fullname_session_variable(){
-        assertThat("Minh Minh").isEqualTo(Serenity.sessionVariableCalled("Phone"));
+        assertThat("Minh Minh").isEqualTo(Serenity.sessionVariableCalled("Fullname"));
     }
     @Test
     public void verify_email_session_variable(){
+
         assertThat("minh@gmail.com").isEqualTo(Serenity.sessionVariableCalled("Email"));
     }
 

@@ -20,6 +20,7 @@ public class RegisterSteps {
         enter_password(accountInfo.getPassword());
         enter_confirm_password(accountInfo.getRePassword());
         click_on_register_button();
+
     }
 
     @Step
