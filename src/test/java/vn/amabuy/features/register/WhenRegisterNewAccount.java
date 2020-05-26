@@ -10,8 +10,10 @@ import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.annotations.WithTags;
 import net.thucydides.junit.annotations.Qualifier;
 import net.thucydides.junit.annotations.UseTestDataFrom;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import vn.amabuy.features.models.Account;
 import vn.amabuy.steps.serenity.HomeSteps;
@@ -29,6 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
                 @WithTag("sessionvariable")
         }
 )
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class WhenRegisterNewAccount {
     @Managed
     WebDriver driver;
