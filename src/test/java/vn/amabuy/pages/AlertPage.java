@@ -14,13 +14,9 @@ import vn.amabuy.MyPageObject;
 
 public class AlertPage extends PageObject {
 
-    @FindBy(xpath = "//*[@id=\"main\"]/div[9]/a")
-    WebElementFacade tryItYourself ;
-
 
     public void answerPrompt(String answer) {
-        tryItYourself.click();
-       //getDriver().switchTo().frame("iframeResult");
+       getDriver().switchTo().frame("iframeResult");
         $("//button[.='Try it']").click();
          waitABit(10000);
        //   getAlert().sendKeys(answer);
