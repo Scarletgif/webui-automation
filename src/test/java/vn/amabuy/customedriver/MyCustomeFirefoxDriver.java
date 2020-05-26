@@ -1,10 +1,12 @@
 package vn.amabuy.customedriver;
 
 import net.thucydides.core.webdriver.DriverSource;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
@@ -20,7 +22,7 @@ public class MyCustomeFirefoxDriver implements DriverSource {
 
             DesiredCapabilities capabilities = DesiredCapabilities.firefox();
             capabilities.setCapability(FirefoxDriver.PROFILE, profile);
-            //capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, "accept");
+            capabilities.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 
             FirefoxOptions options = new FirefoxOptions(capabilities);
             /*

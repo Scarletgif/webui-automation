@@ -28,7 +28,14 @@ public class WhenUserInteractWithPopup {
     public void when_answer_prompt(){
         scarletGift.visit_application();
         alertStep.answer_prompt("Serenity online courser");
-      //  alertStep.accept_alert_prompt();
+        alertStep.accept_alert_prompt();
+    }
+    @Test
+    @WithTag("prompt_cancel")
+    public void when_cancel_prompt(){
+        scarletGift.visit_application();
+        alertStep.answer_prompt("Serenity online");
+        alertStep.cancel_alert_prompt();
     }
 
 

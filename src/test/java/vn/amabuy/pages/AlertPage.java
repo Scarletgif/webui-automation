@@ -16,10 +16,12 @@ public class AlertPage extends PageObject {
 
 
     public void answerPrompt(String answer) {
-       getDriver().switchTo().frame("iframeResult");
+        getDriver().switchTo().frame("iframeResult");
         $("//button[.='Try it']").click();
-         waitABit(10000);
-       //   getAlert().sendKeys(answer);
+        waitABit(10000);
+        getAlert().sendKeys(answer);
+        waitABit(5000);
+
     }
 
     public void acceptAlertPrompt() {
@@ -28,6 +30,7 @@ public class AlertPage extends PageObject {
 
     public void cancelAlertPrompt() {
         getAlert().dismiss();
+        waitABit(5000);
     }
 
     public void waitForAlert(){
