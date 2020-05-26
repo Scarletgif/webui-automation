@@ -8,7 +8,7 @@ import net.thucydides.core.annotations.WithTags;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import vn.amabuy.steps.AlertStep;
+import vn.amabuy.steps.serenity.AlertStep;
 import vn.amabuy.steps.serenity.HomeSteps;
 
 @RunWith(SerenityRunner.class)

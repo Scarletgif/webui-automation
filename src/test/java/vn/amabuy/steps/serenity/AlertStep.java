@@ -1,4 +1,4 @@
-package vn.amabuy.steps;
+package vn.amabuy.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
 import vn.amabuy.pages.AlertPage;
